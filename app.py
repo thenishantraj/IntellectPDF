@@ -268,12 +268,26 @@ def generate_pdf_report(doc_summary_name, stats, analytics_data, agent_outputs):
         story.append(HRFlowable(width="100%", thickness=0.5, color=colors.HexColor("#CBD5E1"), spaceAfter=10))
         story.append(Paragraph("Agentic Workflow Deliverables", h2_style))
 
+        import html
         for title, output in agent_outputs.items():
             story.append(Paragraph(f"<b>{title}</b>", body_style))
-            clean_output = output.replace("#", "").replace("**", "<b>").replace("*", "")
-            for para in clean_output.split("\n\n"):
+            
+            # Special XML/HTML characters (like <, >, &) ko safe banao
+            safe_output = html.escape(output)
+            
+            # Formatting Markdown bold to safe html bold
+            safe_output = safe_output.replace("&lt;b&gt;", "<b>").replace("&lt;/b&gt;", "</b>")
+            
+            for para in safe_output.split("\n\n"):
                 if para.strip():
-                    story.append(Paragraph(para.strip().replace("\n", "<br/>"), body_style))
+                    clean_para = para.strip().replace("\n", "<br/>")
+                    try:
+                        story.append(Paragraph(clean_para, body_style))
+                    except Exception:
+                        # Safety fallback agar ReportLab fir bhi HTML parsing par crash ho
+                        plain_text = para.strip().replace("<br/>", " ")
+                        story.append(Paragraph(html.escape(plain_text), body_style))
+                        
             story.append(Spacer(1, 10))
 
     doc.build(story)

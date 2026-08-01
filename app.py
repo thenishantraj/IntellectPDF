@@ -562,7 +562,7 @@ with tab2:
                 """
 
                 res = gemini_client.models.generate_content(
-                    model='gemini-1.5-flash',
+                    model='models/gemini-1.5-flash',
                     contents=[comp_prompt, f"Context Chunks:\n{context}"]
                 )
                 st.markdown(res.text)

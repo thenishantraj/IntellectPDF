@@ -36,42 +36,92 @@ st.set_page_config(
 
 CUSTOM_CSS = """
 <style>
+    /* Main App Light Background & Typography */
     .stApp {
-        background-color: #0E1117;
-        color: #E0E6ED;
+        background-color: #F8FAFC !important;
+        color: #0F172A !important;
     }
     
+    /* Global Text Fixes */
+    h1, h2, h3, h4, h5, h6, p, span, label, div {
+        color: #0F172A !important;
+    }
+
+    /* Tabs Styling - Clean Light Contrast */
+    .stTabs [data-baseweb="tab-list"] {
+        background-color: #E2E8F0 !important;
+        border-radius: 10px;
+        padding: 5px;
+    }
+    .stTabs [data-baseweb="tab"] {
+        color: #475569 !important;
+        font-weight: 600;
+        border-radius: 8px;
+    }
+    .stTabs [aria-selected="true"] {
+        background-color: #FFFFFF !important;
+        color: #2563EB !important;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+    }
+
+    /* Buttons Styling - Sleek Blue Theme */
+    .stButton>button {
+        background-color: #2563EB !important;
+        color: #FFFFFF !important;
+        border: none !important;
+        border-radius: 8px !important;
+        font-weight: 600 !important;
+        padding: 0.5rem 1rem !important;
+        transition: all 0.2s ease-in-out;
+    }
+    .stButton>button:hover {
+        background-color: #1D4ED8 !important;
+        box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
+    }
+    .stDownloadButton>button {
+        background-color: #059669 !important;
+        color: #FFFFFF !important;
+        border-radius: 8px !important;
+        font-weight: 600 !important;
+    }
+    .stDownloadButton>button:hover {
+        background-color: #047857 !important;
+    }
+
+    /* Cards and Glassmorphism in Light Theme */
     .glass-card {
-        background: rgba(255, 255, 255, 0.03);
-        backdrop-filter: blur(12px);
-        -webkit-backdrop-filter: blur(12px);
-        border: 1px solid rgba(255, 255, 255, 0.08);
+        background: #FFFFFF !important;
+        border: 1px solid #E2E8F0 !important;
         border-radius: 12px;
         padding: 20px;
         margin-bottom: 20px;
-        box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
     }
     
     .kpi-card {
-        background: rgba(255, 255, 255, 0.05);
-        border-left: 4px solid #4F46E5;
+        background: #FFFFFF !important;
+        border-left: 5px solid #2563EB !important;
+        border: 1px solid #E2E8F0;
         border-radius: 8px;
         padding: 16px;
         text-align: left;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.04);
     }
     .kpi-title {
         font-size: 0.82rem;
         text-transform: uppercase;
-        color: #9CA3AF;
+        color: #64748B !important;
+        font-weight: 600;
         letter-spacing: 0.05em;
         margin-bottom: 4px;
     }
     .kpi-value {
         font-size: 1.5rem;
         font-weight: 700;
-        color: #F9FAFB;
+        color: #0F172A !important;
     }
 
+    /* Insights Cards */
     .insight-card {
         padding: 14px;
         border-radius: 8px;
@@ -80,19 +130,31 @@ CUSTOM_CSS = """
         border-left: 5px solid;
     }
     .insight-positive {
-        background: rgba(16, 185, 129, 0.1);
-        border-color: #10B981;
-        color: #D1FAE5;
+        background: #ECFDF5 !important;
+        border-color: #10B981 !important;
+        color: #065F46 !important;
     }
     .insight-attention {
-        background: rgba(245, 158, 11, 0.1);
-        border-color: #F59E0B;
-        color: #FEF3C7;
+        background: #FFFBEB !important;
+        border-color: #F59E0B !important;
+        color: #92400E !important;
     }
     .insight-critical {
-        background: rgba(239, 68, 68, 0.1);
-        border-color: #EF4444;
-        color: #FEE2E2;
+        background: #FEF2F2 !important;
+        border-color: #EF4444 !important;
+        color: #991B1B !important;
+    }
+
+    /* Radio Buttons & Inputs */
+    .stRadio label, .stTextInput label, .stSelectbox label {
+        color: #1E293B !important;
+        font-weight: 500;
+    }
+    
+    /* Sidebar Styling */
+    [data-testid="stSidebar"] {
+        background-color: #FFFFFF !important;
+        border-right: 1px solid #E2E8F0;
     }
 </style>
 """

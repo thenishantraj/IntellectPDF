@@ -28,7 +28,7 @@ from reportlab.lib.enums import TA_LEFT
 # PAGE CONFIGURATION & ENTERPRISE DARK / GLASSMORPHIC CSS
 # ------------------------------------------------------------------------------
 st.set_page_config(
-    page_title="IntellectPDF | IIT Patna Capstone",
+    page_title="IntellectPDF",
     page_icon="🧠",
     layout="wide",
     initial_sidebar_state="expanded"

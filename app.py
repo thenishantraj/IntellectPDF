@@ -468,7 +468,7 @@ with tab1:
                 """
                 try:
                     response = gemini_client.models.generate_content(
-                        model='gemini-2.5-flash',
+                        model='gemini-3.6-flash',
                         contents=[system_prompt, f"Document Corpus Sample:\n{st.session_state.corpus_sample}"],
                         config=types.GenerateContentConfig(
                             response_mime_type="application/json",
@@ -562,7 +562,7 @@ with tab2:
                 """
 
                 res = gemini_client.models.generate_content(
-                    model='models/gemini-1.5-flash',
+                    model='gemini-3.6-flash',
                     contents=[comp_prompt, f"Context Chunks:\n{context}"]
                 )
                 st.markdown(res.text)
@@ -591,7 +591,7 @@ with tab3:
                 """
                 try:
                     response = gemini_client.models.generate_content(
-                        model='gemini-2.5-flash',
+                        model='gemini-3.6-flash',
                         contents=[quiz_prompt, f"Corpus Sample:\n{st.session_state.corpus_sample}"],
                         config=types.GenerateContentConfig(
                             response_mime_type="application/json",
@@ -681,7 +681,7 @@ with tab4:
 
                 try:
                     response = gemini_client.models.generate_content(
-                        model='gemini-2.5-flash',
+                        model='gemini-3.6-flash',
                         contents=[rag_prompt, f"User Query: {user_query}"],
                         config=types.GenerateContentConfig(temperature=0.1)
                     )
@@ -738,7 +738,7 @@ with tab5:
             agent_instruction = f"You are a specialized enterprise AI Agent executing: {agent_target}.\nTask: {agent_prompt}"
             try:
                 agent_res = gemini_client.models.generate_content(
-                    model='gemini-2.5-flash',
+                    model='gemini-3.6-flash',
                     contents=[agent_instruction, f"Document Content:\n{st.session_state.corpus_sample}"],
                     config=types.GenerateContentConfig(temperature=0.2)
                 )

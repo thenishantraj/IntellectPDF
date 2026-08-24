@@ -345,11 +345,11 @@ def resolve_api_key() -> str:
     No front-end input field is ever rendered for the key."""
     key = ""
     try:
-        key = st.secrets.get("GEMINI_API_KEY", "")
+        key = st.secrets.get("GOOGLE_API_KEY", "")
     except Exception:
         key = ""
     if not key:
-        key = os.environ.get("GEMINI_API_KEY", "")
+        key = os.environ.get("GOOGLE_API_KEY", "")
     return key
 
 

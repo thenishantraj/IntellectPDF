@@ -125,49 +125,95 @@ CUSTOM_CSS = """
     }
 
     /* ---- Upload Card ---- */
-    /* ---- Animated Glowing & Moving Border Upload Card ---- */
+    /* ---- Ultra-Modern Animated Mesh Gradient Upload Card ---- */
     .upload-label {
-        text-align: center; font-weight: 750; font-size: 1.05rem; color: #0F172A !important;
+        text-align: center; font-weight: 800; font-size: 1.15rem; color: #0F172A !important;
         margin-bottom: 6px; margin-top: 10px;
     }
     .upload-sublabel {
-        text-align: center; font-size: 0.86rem; color: #64748B !important; margin-bottom: 16px;
+        text-align: center; font-size: 0.88rem; color: #475569 !important; margin-bottom: 18px;
     }
 
     [data-testid="stFileUploaderDropzone"] {
         position: relative !important;
-        background: #FFFFFF !important;
-        border-radius: 18px !important;
-        border: 2px solid transparent !important;
-        background-image: linear-gradient(#FFFFFF, #FFFFFF), 
-                          linear-gradient(90deg, #4F46E5, #06B6D4, #7C3AED, #4F46E5) !important;
-        background-origin: border-box !important;
-        background-clip: padding-box, border-box !important;
-        background-size: 300% 300% !important;
-        animation: borderMove 4s linear infinite, glowPulse 2.5s ease-in-out infinite alternate !important;
-        box-shadow: 0 4px 20px rgba(79, 70, 229, 0.12) !important;
-        transition: all 0.3s ease !important;
-        padding: 20px !important;
+        overflow: hidden !important;
+        border-radius: 20px !important;
+        border: 2px solid rgba(99, 102, 241, 0.4) !important;
+        
+        /* Flowing Aurora / Mesh Gradient Background */
+        background: linear-gradient(
+            -45deg, 
+            #EEF2FF, 
+            #E0E7FF, 
+            #E0F2FE, 
+            #F5F3FF, 
+            #EDE9FE
+        ) !important;
+        background-size: 400% 400% !important;
+        animation: auroraFlow 7s ease infinite, uploaderGlow 3s ease-in-out infinite alternate !important;
+        
+        padding: 24px 20px !important;
+        backdrop-filter: blur(10px) !important;
+        box-shadow: 0 10px 25px -5px rgba(79, 70, 229, 0.15) !important;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
     }
 
+    /* Hover effect */
     [data-testid="stFileUploaderDropzone"]:hover {
-        transform: translateY(-3px) scale(1.01) !important;
-        box-shadow: 0 10px 30px rgba(79, 70, 229, 0.25) !important;
+        transform: translateY(-4px) scale(1.01) !important;
+        border-color: #6366F1 !important;
+        box-shadow: 0 20px 35px -10px rgba(99, 102, 241, 0.35) !important;
     }
 
-    /* Animation Keyframes: Border Move & Glow */
-    @keyframes borderMove {
-        0% { background-position: 0% 50%; }
-        50% { background-position: 100% 50%; }
-        100% { background-position: 0% 50%; }
+    /* Crisp & Clear Typography inside upload box */
+    [data-testid="stFileUploaderDropzone"] span, 
+    [data-testid="stFileUploaderDropzone"] p, 
+    [data-testid="stFileUploaderDropzone"] div,
+    [data-testid="stFileUploaderDropzone"] small {
+        color: #0F172A !important;
+        font-weight: 650 !important;
+        font-size: 0.95rem !important;
     }
 
-    @keyframes glowPulse {
+    /* Upload Button Styling inside Dropzone */
+    [data-testid="stFileUploaderDropzone"] button {
+        background: #FFFFFF !important;
+        color: #4F46E5 !important;
+        border: 1.5px solid #C7D2FE !important;
+        border-radius: 12px !important;
+        font-weight: 700 !important;
+        box-shadow: 0 4px 12px rgba(79, 70, 229, 0.1) !important;
+        transition: all 0.2s ease !important;
+    }
+    [data-testid="stFileUploaderDropzone"] button:hover {
+        background: #4F46E5 !important;
+        color: #FFFFFF !important;
+        border-color: #4F46E5 !important;
+        transform: translateY(-2px) !important;
+        box-shadow: 0 6px 16px rgba(79, 70, 229, 0.3) !important;
+    }
+
+    /* ---- Smooth Flowing Background Animation Keyframes ---- */
+    @keyframes auroraFlow {
         0% {
-            box-shadow: 0 0 12px rgba(79, 70, 229, 0.2), inset 0 0 8px rgba(79, 70, 229, 0.04);
+            background-position: 0% 50%;
+        }
+        50% {
+            background-position: 100% 50%;
         }
         100% {
-            box-shadow: 0 0 26px rgba(124, 58, 237, 0.45), inset 0 0 12px rgba(6, 182, 212, 0.1);
+            background-position: 0% 50%;
+        }
+    }
+
+    @keyframes uploaderGlow {
+        0% {
+            box-shadow: 0 4px 15px rgba(99, 102, 241, 0.12);
+            border-color: rgba(99, 102, 241, 0.3);
+        }
+        100% {
+            box-shadow: 0 8px 30px rgba(99, 102, 241, 0.3);
+            border-color: rgba(99, 102, 241, 0.7);
         }
     }
 

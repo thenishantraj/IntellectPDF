@@ -73,9 +73,9 @@ CUSTOM_CSS = """
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding: 6px 4px 22px 4px;
+        padding: 10px 0 20px 0;
         border-bottom: 1px solid #E2E8F0;
-        margin-bottom: 28px;
+        margin-bottom: 24px;
     }
     .topbar-brand {
         display: flex;

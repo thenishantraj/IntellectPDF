@@ -276,6 +276,56 @@ CUSTOM_CSS = """
     .stRadio label, .stTextInput label, .stSelectbox label, .stSlider label {
         color: #1E293B !important; font-weight: 500;
     }
+
+    /* ---- Modern Enterprise Footer ---- */
+    .app-footer {
+        margin-top: 60px;
+        padding-top: 25px;
+        padding-bottom: 20px;
+        border-top: 1px solid #E2E8F0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+    .footer-left {
+        font-size: 0.9rem;
+        color: #64748B;
+        font-weight: 500;
+    }
+    .footer-left strong {
+        color: #0F172A;
+    }
+    .footer-socials {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+    .social-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 36px;
+        height: 36px;
+        border-radius: 9px;
+        background: #FFFFFF;
+        border: 1px solid #CBD5E1;
+        color: #475569;
+        text-decoration: none !important;
+        transition: all 0.2s ease-in-out;
+    }
+    .social-btn:hover {
+        background: #EEF2FF;
+        color: #2563EB;
+        border-color: #C7D2FE;
+        transform: translateY(-2px);
+    }
+    .social-btn svg {
+        width: 18px;
+        height: 18px;
+        fill: currentColor;
+    }
 </style>
 """
 st.markdown(CUSTOM_CSS, unsafe_allow_html=True)
@@ -1116,6 +1166,29 @@ def render_section5_chat_and_quiz():
                         st.markdown(f"**Reasoning:** {q['explanation']}")
                     st.metric(label="Final Score", value=f"{score} / {total}", delta=f"{(score/total)*100:.0f}% Accuracy")
 
+def render_footer():
+    footer_html = """
+    <div class="app-footer">
+        <div class="footer-left">
+            Developed with ❤️ by <strong>Your Name</strong> · IntellectPDF Platform
+        </div>
+        <div class="footer-socials">
+            <!-- LinkedIn -->
+            <a href="https://www.linkedin.com/in/YOUR_USERNAME" target="_blank" class="social-btn" title="LinkedIn">
+                <svg viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+            </a>
+            <!-- GitHub -->
+            <a href="https://github.com/YOUR_USERNAME" target="_blank" class="social-btn" title="GitHub">
+                <svg viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.1-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/></svg>
+            </a>
+            <!-- Email / Contact -->
+            <a href="mailto:your_email@example.com" class="social-btn" title="Email Contact">
+                <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+            </a>
+        </div>
+    </div>
+    """
+    st.markdown(footer_html, unsafe_allow_html=True) 
 
 def render_dashboard():
     render_topbar(show_reset=True)
@@ -1134,3 +1207,4 @@ if st.session_state.vector_store is None:
     render_landing_page()
 else:
     render_dashboard()
+render_footer()

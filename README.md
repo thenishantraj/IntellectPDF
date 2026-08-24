@@ -53,7 +53,7 @@ Developed as part of the **IIT Patna Generative AI Capstone Project**.
                              │
                              ▼
  ┌────────────────────────────────────────────────────────┐
- │        Google Gemini 2.5 Flash LLM Processing          │
+ │         LLM Processing                                 │
  └──────────┬─────────────────────────────────────────────┘
             │
             ▼

@@ -708,31 +708,24 @@ def render_landing_page():
                     st.error("No readable text could be extracted from the uploaded file(s).")
 
     # ---- Feature Showcase ----
-    features = [
-        ("📊", "Executive Summary & Dynamic Analytics",
-         "Auto-extracted KPI cards, risk ratings, and interactive Plotly charts distilled straight from your documents."),
-        ("⚔️", "Cross-Document Comparative Matrix",
-         "Select multiple files to generate side-by-side comparison tables and strategic contrast reports."),
-        ("🚨", "Compliance & Anomaly Risk Audit",
-         "Automated detection of red flags, policy discrepancies, and compliance gaps across your corpus."),
-        ("🧩", "AI-Driven Comprehension & Assessment",
-         "Auto-generated 5-question quizzes with instant grading and explanation-backed feedback."),
-        ("💬", "Grounded Semantic RAG Chat",
-         "Ask natural-language questions and get answers with exact page-level and file-level citations."),
-        ("📥", "Executive PDF & Markdown Reports",
-         "One-click, professionally formatted PDF and Markdown exports built with ReportLab Platypus."),
-    ]
-    cards_html = '<div class="feature-grid">'
-    for icon, title, desc in features:
-        cards_html += f"""
-        <div class="feature-card">
-            <div class="feature-icon">{icon}</div>
-            <div class="feature-title">{title}</div>
-            <div class="feature-desc">{desc}</div>
-        </div>
-        """
-    cards_html += "</div>"
-    st.markdown(cards_html, unsafe_allow_html=True)
+    # ---- Fixed Feature Showcase Layout ----
+    st.markdown("<div style='height: 25px;'></div>", unsafe_allow_html=True)
+    f_col1, f_col2, f_col3 = st.columns(3)
+    
+    with f_col1:
+        st.markdown("""<div class="feature-card"><div class="feature-icon">📊</div><div class="feature-title">Executive Summary & Analytics</div><div class="feature-desc">Auto-extracted KPI cards, risk ratings, and interactive Plotly charts distilled straight from documents.</div></div>""", unsafe_allow_html=True)
+        st.markdown("<div style='height: 15px;'></div>", unsafe_allow_html=True)
+        st.markdown("""<div class="feature-card"><div class="feature-icon">🧩</div><div class="feature-title">Comprehension Engine</div><div class="feature-desc">Auto-generated 5-question quizzes with instant grading and explanation-backed feedback.</div></div>""", unsafe_allow_html=True)
+
+    with f_col2:
+        st.markdown("""<div class="feature-card"><div class="feature-icon">⚔️</div><div class="feature-title">Cross-Document Matrix</div><div class="feature-desc">Select multiple files to generate side-by-side comparison tables and strategic contrast reports.</div></div>""", unsafe_allow_html=True)
+        st.markdown("<div style='height: 15px;'></div>", unsafe_allow_html=True)
+        st.markdown("""<div class="feature-card"><div class="feature-icon">💬</div><div class="feature-title">Grounded RAG Chat</div><div class="feature-desc">Ask natural-language questions and get answers with exact page-level and file-level citations.</div></div>""", unsafe_allow_html=True)
+
+    with f_col3:
+        st.markdown("""<div class="feature-card"><div class="feature-icon">🚨</div><div class="feature-title">Anomaly & Risk Audit</div><div class="feature-desc">Automated detection of red flags, policy discrepancies, and compliance gaps across your corpus.</div></div>""", unsafe_allow_html=True)
+        st.markdown("<div style='height: 15px;'></div>", unsafe_allow_html=True)
+        st.markdown("""<div class="feature-card"><div class="feature-icon">📥</div><div class="feature-title">Report Exports</div><div class="feature-desc">One-click, professionally formatted PDF and Markdown exports built with ReportLab Platypus.</div></div>""", unsafe_allow_html=True)
 
 
 # ==============================================================================

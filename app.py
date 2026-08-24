@@ -125,21 +125,50 @@ CUSTOM_CSS = """
     }
 
     /* ---- Upload Card ---- */
+    /* ---- Animated Glowing & Moving Border Upload Card ---- */
     .upload-label {
-        text-align: center; font-weight: 700; font-size: 1rem; color: #1E293B !important;
+        text-align: center; font-weight: 750; font-size: 1.05rem; color: #0F172A !important;
         margin-bottom: 6px; margin-top: 10px;
     }
     .upload-sublabel {
-        text-align: center; font-size: 0.85rem; color: #94A3B8 !important; margin-bottom: 14px;
+        text-align: center; font-size: 0.86rem; color: #64748B !important; margin-bottom: 16px;
     }
+
     [data-testid="stFileUploaderDropzone"] {
-        border: 2px dashed #C7D2FE !important;
-        background: #F8FAFF !important;
-        border-radius: 16px !important;
+        position: relative !important;
+        background: #FFFFFF !important;
+        border-radius: 18px !important;
+        border: 2px solid transparent !important;
+        background-image: linear-gradient(#FFFFFF, #FFFFFF), 
+                          linear-gradient(90deg, #4F46E5, #06B6D4, #7C3AED, #4F46E5) !important;
+        background-origin: border-box !important;
+        background-clip: padding-box, border-box !important;
+        background-size: 300% 300% !important;
+        animation: borderMove 4s linear infinite, glowPulse 2.5s ease-in-out infinite alternate !important;
+        box-shadow: 0 4px 20px rgba(79, 70, 229, 0.12) !important;
+        transition: all 0.3s ease !important;
+        padding: 20px !important;
     }
+
     [data-testid="stFileUploaderDropzone"]:hover {
-        border-color: #4F46E5 !important;
-        background: #EEF2FF !important;
+        transform: translateY(-3px) scale(1.01) !important;
+        box-shadow: 0 10px 30px rgba(79, 70, 229, 0.25) !important;
+    }
+
+    /* Animation Keyframes: Border Move & Glow */
+    @keyframes borderMove {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+    }
+
+    @keyframes glowPulse {
+        0% {
+            box-shadow: 0 0 12px rgba(79, 70, 229, 0.2), inset 0 0 8px rgba(79, 70, 229, 0.04);
+        }
+        100% {
+            box-shadow: 0 0 26px rgba(124, 58, 237, 0.45), inset 0 0 12px rgba(6, 182, 212, 0.1);
+        }
     }
 
     /* ---- Feature Showcase Grid ---- */

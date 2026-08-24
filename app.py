@@ -63,8 +63,8 @@ CUSTOM_CSS = """
         color: #0F172A !important;
     }
     .block-container {
-        max-width: 1180px !important;
-        padding-top: 1.5rem !important;
+        max-width: 1250px !important;
+        padding-top: 4rem !important;
         padding-bottom: 3rem !important;
     }
 

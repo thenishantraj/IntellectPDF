@@ -33,7 +33,7 @@ GEMINI_MODEL = "gemini-3.1-flash-lite"
 # PAGE CONFIGURATION (SIDEBAR FULLY COLLAPSED / DISABLED)
 # ------------------------------------------------------------------------------
 st.set_page_config(
-    page_title="IntellectPDF | Multi-Agent Intelligence Platform",
+    page_title="DocLensAi | Multi-Agent Intelligence Platform",
     page_icon="🧠",
     layout="wide",
     initial_sidebar_state="collapsed"
@@ -519,7 +519,7 @@ def generate_pdf_report(doc_summary_name, stats, analytics_data, agent_outputs):
     )
 
     # 1. Header & Metadata
-    story.append(Paragraph("IntellectPDF: Executive Intelligence Report", title_style))
+    story.append(Paragraph("DocLensAi: Executive Intelligence Report", title_style))
     story.append(Paragraph("IIT Patna Generative AI Capstone Project", subtitle_style))
     story.append(HRFlowable(width="100%", thickness=1.5, color=ACCENT_COLOR, spaceAfter=15))
 
@@ -674,7 +674,7 @@ def render_topbar(show_reset=False):
                 <div class="topbar-brand">
                     <div class="topbar-logo">🧠</div>
                     <div>
-                        <div class="topbar-title">IntellectPDF</div>
+                        <div class="topbar-title">DocLensAi</div>
                         <div class="topbar-caption">Multi-Agent Intelligence Platform · IIT Patna Capstone</div>
                     </div>
                 </div>
@@ -740,7 +740,7 @@ if not active_api_key:
             <div style="font-size:2.4rem; margin-bottom:10px;">🔐</div>
             <h3 style="margin-bottom:10px;">Gemini API Key Not Configured</h3>
             <p style="color:#64748B; font-size:0.95rem; line-height:1.6;">
-                IntellectPDF requires a <b>GEMINI_API_KEY</b> to be configured on the server before it can run.
+                DocLensAi requires a <b>GEMINI_API_KEY</b> to be configured on the server before it can run.
                 This platform does not accept API keys from the browser for security reasons.
             </p>
             <p style="color:#64748B; font-size:0.88rem; line-height:1.6; margin-top:14px;">
@@ -769,7 +769,7 @@ def render_landing_page():
             <div class="hero-badge"><span class="dot"></span> IIT Patna · Generative AI Capstone Project</div>
             <div class="hero-title">Turn dense PDFs into<br><span class="gradient">actionable intelligence</span></div>
             <p class="hero-subtitle">
-                IntellectPDF is a multi-agent RAG platform that reads, indexes, compares, and interrogates your
+                DocLensAi is a multi-agent RAG platform that reads, indexes, compares, and interrogates your
                 financial audits, medical reports, contracts, and research papers — with grounded, page-level
                 citations on every answer.
             </p>
@@ -778,7 +778,7 @@ def render_landing_page():
         unsafe_allow_html=True,
     )
 
-    with st.expander("⚙️ Advanced RAG Configuration (optional)"):
+    with st.expander("Advanced RAG Configuration (optional)"):
         c1, c2, c3 = st.columns(3)
         with c1:
             st.session_state.cfg_chunk_size = st.slider(
@@ -845,7 +845,7 @@ def render_landing_page():
     with f_col2:
         st.markdown("""<div class="feature-card"><div class="feature-icon">⚔️</div><div class="feature-title">Cross-Document Matrix</div><div class="feature-desc">Select multiple files to generate side-by-side comparison tables and strategic contrast reports.</div></div>""", unsafe_allow_html=True)
         st.markdown("<div style='height: 15px;'></div>", unsafe_allow_html=True)
-        st.markdown("""<div class="feature-card"><div class="feature-icon">💬</div><div class="feature-title">Grounded RAG Chat</div><div class="feature-desc">Ask natural-language questions and get answers with exact page-level and file-level citations.</div></div>""", unsafe_allow_html=True)
+        st.markdown("""<div class="feature-card"><div class="feature-icon">💬</div><div class="feature-title">AI ChatBot</div><div class="feature-desc">Ask natural-language questions and get answers with exact page-level and file-level citations.</div></div>""", unsafe_allow_html=True)
 
     with f_col3:
         st.markdown("""<div class="feature-card"><div class="feature-icon">🚨</div><div class="feature-title">Anomaly & Risk Audit</div><div class="feature-desc">Automated detection of red flags, policy discrepancies, and compliance gaps across your corpus.</div></div>""", unsafe_allow_html=True)
@@ -1080,13 +1080,13 @@ def render_section4_agentic():
             st.download_button(
                 label="📥 Download PDF Report (.pdf)",
                 data=pdf_bytes,
-                file_name="IntellectPDF_Executive_Report.pdf",
+                file_name="DocLensAi_Executive_Report.pdf",
                 mime="application/pdf",
                 use_container_width=True
             )
 
         with dl_col2:
-            report_content = "# IntellectPDF Executive Report\n"
+            report_content = "# DocLensAi Executive Report\n"
             report_content += f"**Indexed Files:** {doc_summary_title}\n\n"
 
             if st.session_state.analytics_data:
@@ -1103,7 +1103,7 @@ def render_section4_agentic():
             st.download_button(
                 label="📝 Download Markdown Report (.md)",
                 data=report_content,
-                file_name="IntellectPDF_Executive_Report.md",
+                file_name="DocLensAi_Executive_Report.md",
                 mime="text/markdown",
                 use_container_width=True
             )
@@ -1111,10 +1111,10 @@ def render_section4_agentic():
 
 def render_section5_chat_and_quiz():
     with st.container(border=True):
-        render_section_header("💬", "Deep RAG Chat & Comprehension Suite",
+        render_section_header("💬", "ChatBot & Comprehension Suite",
                                "Grounded conversational retrieval and self-assessment, side by side")
 
-        tab_chat, tab_quiz = st.tabs(["💬 Deep RAG Chat", "📝 Assessment Engine"])
+        tab_chat, tab_quiz = st.tabs(["💬 AI ChatBot", "📝 Assessment Engine"])
 
         # ---- Tab A: Deep RAG Chat ----
         with tab_chat:
@@ -1245,19 +1245,11 @@ def render_footer():
     footer_html = """
     <div class="app-footer">
         <div class="footer-left">
-            Developed with ❤️ by <strong>Nishant Raj</strong> · IntellectPDF Platform
+            Developed with ❤️ by <strong>Prashant Kumar</strong> · DocLensAi Platform
         </div>
         <div class="footer-socials">
-            <!-- LinkedIn -->
-            <a href="https://www.linkedin.com/in/nishant-raj-82972b208/" target="_blank" class="social-btn" title="LinkedIn">
-                <svg viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
-            </a>
-            <!-- GitHub -->
-            <a href="https://github.com/thenishantraj" target="_blank" class="social-btn" title="GitHub">
-                <svg viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.1-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/></svg>
-            </a>
             <!-- Email / Contact -->
-            <a href="mailto:nishantraj6581@gmail.com" class="social-btn" title="Email Contact">
+            <a href="prashant.has.kumar@gmail.com" class="social-btn" title="Email Contact">
                 <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
             </a>
         </div>

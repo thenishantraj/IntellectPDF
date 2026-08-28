@@ -1,4 +1,4 @@
-# 🧠 IntellectPDF: Multi-Agent PDF Intelligence & Analytics Platform
+# 🧠 DocLensAi: Multi-Agent PDF Intelligence & Analytics Platform
 
 [![Python](https://img.shields.io/badge/Python-3.10%2B-blue.svg)](https://www.python.org/)
 [![Streamlit](https://img.shields.io/badge/Streamlit-1.35%2B-FF4B4B.svg)](https://streamlit.io/)
@@ -17,7 +17,7 @@ Developed as part of the **IIT Patna Generative AI Capstone Project**.
 * **📄 Multi-Document Processing & Vector Indexing:** Extracts text page-by-page, performs chunking using `RecursiveCharacterTextSplitter`, and creates high-performance vector embeddings using FAISS and HuggingFace models (`all-MiniLM-L6-v2`).
 * **📊 Executive Summary & Dynamic Analytics:** Automatically extracts structured JSON key metrics and generates interactive **Plotly dark-mode charts** alongside color-coded risk/insight badges.
 * **⚔️ Cross-Document Comparative Matrix:** Select multiple uploaded PDFs to generate side-by-side comparison tables, strategic contrasts, and risk audits.
-* **💬 Deep RAG Semantic Chatbot:** Grounded Q&A powered by Gemini 2.5 Flash with **exact page-level and file-level source citations**.
+* **💬 Deep RAG Semantic Chatbot:** Grounded Q&A powered by Gemini **exact page-level and file-level source citations**.
 * **📝 Assessment & Quiz Engine:** Auto-generates 5-question multiple-choice quizzes (MCQs) with instant evaluation, score tally, and logical feedback.
 * **⚡ Autonomous Agentic Workflows:** Pre-built agent routines for **SWOT Analysis**, **Risk & Anomaly Audits**, **Action Item Tracking**, and **Hindi Translations**.
 * **📥 Enterprise PDF & Markdown Reports:** Programmatically constructs styled, multi-page PDF executive summaries in-memory using **ReportLab Platypus**.
@@ -53,7 +53,7 @@ Developed as part of the **IIT Patna Generative AI Capstone Project**.
                              │
                              ▼
  ┌────────────────────────────────────────────────────────┐
- │         LLM Processing                                 │
+ │                    LLM Processing                      │
  └──────────┬─────────────────────────────────────────────┘
             │
             ▼
@@ -77,55 +77,6 @@ Developed as part of the **IIT Patna Generative AI Capstone Project**.
 
 ---
 
-## 🚀 Quickstart & Local Setup
-
-### 1. Clone the Repository
-
-```bash
-git clone [https://github.com/your-username/intellect-pdf.git](https://github.com/your-username/intellect-pdf.git)
-cd intellect-pdf
-
-```
-
-### 2. Create and Activate Virtual Environment
-
-```bash
-# On Windows
-python -m venv venv
-venv\Scripts\activate
-
-# On macOS/Linux
-python3 -m venv venv
-source venv/bin/activate
-
-```
-
-### 3. Install Dependencies
-
-```bash
-pip install -r requirements.txt
-
-```
-
-### 4. Configure API Keys
-
-Create a `.streamlit/secrets.toml` file in the root directory and add your Google Gemini API key:
-
-```toml
-GEMINI_API_KEY = "your_actual_gemini_api_key_here"
-
-```
-
-*(Alternatively, you can pass your key directly through the Streamlit sidebar input at runtime.)*
-
-### 5. Launch Application
-
-```bash
-streamlit run app.py
-
-```
-
----
 
 ## 📁 Repository Structure
 
@@ -144,7 +95,7 @@ streamlit run app.py
 
 * **Vector Retrieval Latency:** < 15 ms for Top-4 chunks on a 1,000-chunk index.
 * **Factual Grounding Accuracy:** 96.8% precision on domain-specific technical queries with zero hallucinations.
-* **RAG Search Response Time:** ~ 1.4 seconds powered by `gemini-2.5-flash`.
+* **RAG Search Response Time:** ~ 1.4 seconds powered by `LLM`.
 
 ---
 

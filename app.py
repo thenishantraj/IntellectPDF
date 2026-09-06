@@ -397,9 +397,8 @@ CUSTOM_CSS = """
 """
 st.markdown(CUSTOM_CSS, unsafe_allow_html=True)
 
-# ------------------------------------------------------------------------------
-# SESSION STATE INITIALIZATION
-# ------------------------------------------------------------------------------
+
+
 _DEFAULTS = {
     "vector_store": None,
     "doc_stats": {},

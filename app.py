@@ -9,29 +9,24 @@ import plotly.graph_objects as go
 import streamlit as st
 from pypdf import PdfReader
 
-# Google GenAI SDK
+
 from google import genai
 from google.genai import types
 
-# LangChain & FAISS
+
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_community.vectorstores import FAISS
 from langchain_community.embeddings import HuggingFaceEmbeddings
 
-# ReportLab Libraries for PDF Generation
 from reportlab.lib.pagesizes import letter
 from reportlab.lib import colors
 from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, Table, TableStyle, HRFlowable
 from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
 
-# ==============================================================================
-# GLOBAL CONFIGURATION
-# ==============================================================================
+
 GEMINI_MODEL = "gemini-3.1-flash-lite"
 
-# ------------------------------------------------------------------------------
-# PAGE CONFIGURATION (SIDEBAR FULLY COLLAPSED / DISABLED)
-# ------------------------------------------------------------------------------
+
 st.set_page_config(
     page_title="DocLensAi | Multi-Agent Intelligence Platform",
     page_icon="🧠",
@@ -39,9 +34,6 @@ st.set_page_config(
     initial_sidebar_state="collapsed"
 )
 
-# ------------------------------------------------------------------------------
-# ENTERPRISE LIGHT-THEME CSS (SIDEBAR-FREE, GLASSMORPHIC, INTER TYPOGRAPHY)
-# ------------------------------------------------------------------------------
 CUSTOM_CSS = """
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');

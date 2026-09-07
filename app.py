@@ -749,7 +749,7 @@ gemini_client = get_gemini_client(active_api_key)
 
 
 # ==============================================================================
-# LANDING PAGE (PRE-UPLOAD STATE)
+
 # ==============================================================================
 def render_landing_page():
     render_topbar(show_reset=False)

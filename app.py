@@ -470,7 +470,7 @@ def resolve_api_key() -> str:
 
 
 # ------------------------------------------------------------------------------
-# REPORTLAB PDF GENERATOR FUNCTION
+# REPORTLAB PDF GENERATOR FUN
 # ------------------------------------------------------------------------------
 def generate_pdf_report(doc_summary_name, stats, analytics_data, agent_outputs):
     """Generates an executive report PDF dynamically using ReportLab Platypus."""

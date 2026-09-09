@@ -12,7 +12,7 @@ Developed as part of the **IIT Patna Generative AI Capstone Project**.
 
 ---
 
-## ✨ Key Features
+## Key Features
 
 * **📄 Multi-Document Processing & Vector Indexing:** Extracts text page-by-page, performs chunking using `RecursiveCharacterTextSplitter`, and creates high-performance vector embeddings using FAISS and HuggingFace models (`all-MiniLM-L6-v2`).
 * **📊 Executive Summary & Dynamic Analytics:** Automatically extracts structured JSON key metrics and generates interactive **Plotly dark-mode charts** alongside color-coded risk/insight badges.

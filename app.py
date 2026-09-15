@@ -468,10 +468,6 @@ def resolve_api_key() -> str:
         key = os.environ.get("GOOGLE_API_KEY", "")
     return key
 
-
-# ------------------------------------------------------------------------------
-
-# ------------------------------------------------------------------------------
 def generate_pdf_report(doc_summary_name, stats, analytics_data, agent_outputs):
     """Generates an executive report PDF dynamically using ReportLab Platypus."""
     buffer = io.BytesIO()

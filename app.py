@@ -432,7 +432,7 @@ def reset_corpus():
 
 
 # ------------------------------------------------------------------------------
-# HELPER FUNCTIONS & GEMINI CLIENT SETUP
+# HELPER FUNCTIONS & GEMINI CLIE
 # ------------------------------------------------------------------------------
 def get_gemini_client(api_key: str):
     if not api_key:

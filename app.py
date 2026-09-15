@@ -431,9 +431,6 @@ def reset_corpus():
     st.session_state.uploader_version += 1
 
 
-# ------------------------------------------------------------------------------
-# HELPER FUNCTIONS & GEMINI CLIE
-# ------------------------------------------------------------------------------
 def get_gemini_client(api_key: str):
     if not api_key:
         return None

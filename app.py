@@ -588,7 +588,7 @@ def generate_pdf_report(doc_summary_name, stats, analytics_data, agent_outputs):
 
 
 # ------------------------------------------------------------------------------
-# MULTI-P
+
 # ------------------------------------------------------------------------------
 def process_multiple_pdfs(uploaded_files, chunk_size=1000, chunk_overlap=200):
     all_documents = []
